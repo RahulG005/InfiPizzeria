@@ -10,12 +10,10 @@ def index(request):
     return render(request, 'index.html')
 
 class MenuItemView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = Menuserializer
 
 class SingleMenuItemView(generics.RetrieveUpdateAPIView, generics.DestroyAPIView):
-    permission_classes = [IsAuthenticated]
     queryset = Menu.objects.all()
     serializer_class = Menuserializer
 
